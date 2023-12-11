@@ -1,0 +1,42 @@
+{% extends "bazaar/layout.html" %}
+
+
+{% block body %}
+
+<h2 class="mission">Think Global, Buy Local</h2>
+
+<div class="home">
+  <p> 
+      "Local markets offer numerous benefits, both for consumers and the community. As the saying goes,
+       "Think global, buy local," and this rings true in the context of supporting local markets. 
+       Shopping at local markets promotes economic sustainability by directly injecting money into t
+       he community. It helps local businesses thrive, as "when you buy from a small business, 
+       you're not helping a CEO buy a third vacation home, you're helping a little girl get dance
+        lessons." Furthermore, it fosters a sense of community and connection, with "local markets 
+        acting as the heartbeat of the neighborhood." Additionally, local products are often fresher
+         and more environmentally friendly, reducing the carbon footprint associated with transportation.
+          In sum, local markets enrich our lives in many ways, creating a win-win situation for all."
+  </p>
+</div>
+
+
+  <div class="fruits"></div>
+    {% for item in items %}
+      <div class="fruit">
+        <table>
+          <tr>
+              <td>{{item.item_name}}</td>
+          </tr>
+          <tr>
+              <td>${{item.price}}</td>
+          </tr>
+          <tr>
+              <td>
+                <button value="{{product.id}}">Add to Cart</button>
+              </td>
+          </tr>
+        </table>
+      </div> 
+    {% endfor %} 
+  </div>
+{% endblock %}
